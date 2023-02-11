@@ -13,6 +13,7 @@ const Headingtext = (props) => {
         fontSize: 30,
         color: 'black',
         textAlign: 'center',
+        marginBottom: 50,
       },
     };
 

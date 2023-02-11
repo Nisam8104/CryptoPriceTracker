@@ -3,12 +3,13 @@ import {View, Button, Text, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native';
 
-const CryptoCard = () => {
+const CryptoCard = props => {
   const navigation = useNavigation();
+  const {index, item} = props;
   return (
     <TouchableOpacity onPress={() => navigation.navigate('DetailsPage')}>
       <View style={styles.Container}>
-        <Text style={styles.textstyle}>Base Asset: BitCoin</Text>
+        <Text style={styles.textstyle}>Base Asset: EXm{item}</Text>
         <Text style={styles.textstyle}>Last Price: 2500000</Text>
       </View>
     </TouchableOpacity>
@@ -17,8 +18,8 @@ const CryptoCard = () => {
 
 const styles = StyleSheet.create({
   Container: {
-    marginTop: 150,
-    marginBottom: 50,
+    marginTop: 10,
+    marginBottom: 0,
     marginLeft: 10,
     marginRight: 10,
     paddingLeft: 20,
