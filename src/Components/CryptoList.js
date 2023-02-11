@@ -1,15 +1,17 @@
 import React from 'react';
-import {View,Button,Text,StyleSheet} from 'react-native';
+import {View, Button, Text, StyleSheet} from 'react-native';
+import {FlatList} from 'react-native';
 
 import CryptoCard from './CryptoCard';
 
 const CryptoList = () => {
-    
-  return (
-    <View>
-      <CryptoCard/>
-    </View>
-  );
+  <View>
+    <FlatList
+      data={{}}
+      renderItem={() => {
+        return <CryptoCard />;
+      }}></FlatList>
+  </View>;
 };
 
 export default CryptoList;

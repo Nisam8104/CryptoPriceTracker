@@ -8,8 +8,8 @@ const CryptoCard = () => {
   return (
     <TouchableOpacity onPress={() => navigation.navigate('DetailsPage')}>
       <View style={styles.Container}>
-        <Text style={styles.textstyle}>Coin: BitCoin</Text>
-        <Text style={styles.textstyle}>INR: 1000</Text>
+        <Text style={styles.textstyle}>Base Asset: BitCoin</Text>
+        <Text style={styles.textstyle}>Last Price: 2500000</Text>
       </View>
     </TouchableOpacity>
   );

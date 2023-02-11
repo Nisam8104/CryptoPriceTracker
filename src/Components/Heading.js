@@ -11,7 +11,7 @@ const Headingtext = (props) => {
   const styles = {
     headingtext: {
         fontSize: 30,
-        color: 'white',
+        color: 'black',
         textAlign: 'center',
       },
     };
