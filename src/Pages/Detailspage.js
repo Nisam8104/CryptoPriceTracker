@@ -2,31 +2,31 @@ import React from 'react';
 import {View, Button, Text, StyleSheet} from 'react-native';
 import Headingtext from '../Components/Heading';
 
+const DetailsPage = props => {
+  console.log(props);
+  const {key, item} = props.route.params;
 
-
-const DetailsPage = () => {
- 
   return (
     <View>
-        <Headingtext title='Full Details'/>
-    <View style={styles.Container}>
-      <View style={styles.row}>
-        <View style={styles.column}>
-          <Text style={styles.textstyle}>Base Asset: Btc</Text>
-          <Text style={styles.textstyle}>Last Price: 2500000</Text>
-          <Text style={styles.textstyle}>openPrice: 1901801</Text>
-          <Text style={styles.textstyle}>lowPrice: 1860000.0</Text>
-          <Text style={styles.textstyle}>highPrice: 1920482.0</Text>
-        </View>
-        <View style={styles.column}>
-          <Text style={styles.textstyle}>Last Price: 2500000</Text>
-          <Text style={styles.textstyle}>volume: 15.82745</Text>
-          <Text style={styles.textstyle}>bidPrice: 1870001.0</Text>
-          <Text style={styles.textstyle}>askPrice: 1897899.0</Text>
-          <Text style={styles.textstyle}>at: 1676061067000</Text>
+      <Headingtext title="Full Details" />
+      <View style={styles.Container}>
+        <View style={styles.row}>
+          <View style={styles.column}>
+            <Text style={styles.textstyle}>Base Asset: {item.baseAsset}</Text>
+            <Text style={styles.textstyle}>Last Price: {item.lastPrice}</Text>
+            <Text style={styles.textstyle}>openPrice: {item.openPrice}</Text>
+            <Text style={styles.textstyle}>lowPrice: {item.lowPrice}</Text>
+            <Text style={styles.textstyle}>highPrice: {item.highPrice}</Text>
+          </View>
+          <View style={styles.column}>
+            <Text style={styles.textstyle}>Last Price: {item.lastPrice}</Text>
+            <Text style={styles.textstyle}>volume: {item.volume}</Text>
+            <Text style={styles.textstyle}>bidPrice: {item.bidPrice}</Text>
+            <Text style={styles.textstyle}>askPrice: {item.askPrice}</Text>
+            <Text style={styles.textstyle}>at: {item.at}</Text>
+          </View>
         </View>
       </View>
-    </View>
     </View>
   );
 };
@@ -53,9 +53,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: 'black',
     justifyContent: 'center',
-    paddingBottom:10,
-    fontWeight:'bold',
-    
+    paddingBottom: 10,
+    fontWeight: 'bold',
   },
   row: {
     flexDirection: 'row',
@@ -64,7 +63,7 @@ const styles = StyleSheet.create({
   column: {
     flexDirection: 'column',
     justifyContent: 'space-between',
-    paddingBottom:5,
+    paddingBottom: 5,
   },
 });
 export default DetailsPage;

@@ -1,7 +1,9 @@
-const CryptoApi= async()=>{
-    fetch("https://api.wazirx.com/sapi/v1/tickers/24hr", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-}
-export default CryptoApi;
+
+const CryptoApi = async() => {
+  const response = await fetch(`https://api.wazirx.com/sapi/v1/tickers/24hr?random=${Math.random()}`);
+  const result = await response.text();
+  const wholeData = JSON.parse(result);
+  return wholeData;
+};
+
+export{ CryptoApi };

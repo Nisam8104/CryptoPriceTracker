@@ -5,12 +5,14 @@ import {TouchableOpacity} from 'react-native';
 
 const CryptoCard = props => {
   const navigation = useNavigation();
-  const {index, item} = props;
+  const {key, item} = props;
+
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('DetailsPage')}>
+    <TouchableOpacity onPress={() => navigation.navigate('DetailsPage', props)}>
       <View style={styles.Container}>
-        <Text style={styles.textstyle}>Base Asset: EXm{item}</Text>
-        <Text style={styles.textstyle}>Last Price: 2500000</Text>
+        <Text style={styles.textstyle}>Coin: {item.baseAsset} </Text>
+
+        <Text style={styles.textstyle}>Last Price:{item.lastPrice}</Text>
       </View>
     </TouchableOpacity>
   );
